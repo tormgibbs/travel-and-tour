@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+
+.slider-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+.slide button {
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
+
+
+.slide.active {
+  opacity: 1;  
+}
+
+
+.slide.prev {
+  transform: translateX(0%);
+}
+
+
+.slide:nth-child(1) { 
+  background-image: url('./images/island-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    background-color: #83e9f3;
+    border-style: solid;
+    padding: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 10ms;
+
+    &:hover {
+      background-color: #5f9fa5;
+    }
+  }
+
+  .hero-content {
+    color: #262e40;
+
+    h1 {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 42px #0fa, 0 0 82px #0fa,0 0 92px #0fa;
+    }
+    
+    p {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 42px #0fa, 0 0 82px #0fa,0 0 92px #0fa;
+    }
+  }
+}
+.slide:nth-child(2) { 
+  background-image: url('./images/hiking-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    padding: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+}
+.slide:nth-child(3) { 
+  background-image: url('./images/cityscape-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    padding: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+}
+
+.hero-content {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal; 
+
+  h1 {
+    font-size: 60px;
+    margin: 0;
+  }
+
+  p {
+    font-size: 30px;
+    margin: 0;
+  }
+}
+
+.slider-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+
+.slider-nav button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.accordion-section {
+  padding: 1rem 0;
+  padding-bottom: 4rem;
+  background-color: #d0d3d4;
+
+  h1 {
+    font-size: 40px;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal; 
+    text-align: center;
+  }
+}
+
+
+.accordion {
+  max-width: 50%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.accordion-item {
+  /* border: 1px solid #ddd; */
+  margin-bottom: 5px;
+}
+
+.accordion-header {
+  background-color: #f4f4f4;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.accordion-item.active {
+  .accordion-header {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+
+.accordion-content {
+  padding: 10px;
+  display: none;
+  background-color: white;
+}
+
+.active .accordion-content {
+  display: block;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.accordion-header::after {
+  content: '+';
+  float: right;
+}
+.active .accordion-header::after {
+  content: '-';
+}
+
+.about-section {
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1:nth-child(1) {
+    font-size: 40px;
+    margin: 0;
+  }
+  
+  
+}
+
+.mission {
+  font-size: 35px;
+  margin: 0;
+
+  +p {
+    font-size: 30px;
+    max-width: 80%;
+    text-align: center;
+  }
+}
+
+.about-txt {
+  font-size: 30px;
+  max-width: 80%;
+  text-align: center;
+}
+
+.vision {
+  font-size: 35px;
+  margin: 0;
+
+  +p {
+    font-size: 30px;
+    max-width: 80%;
+    text-align: center;
+  }
+}
+
+.carousel-section {
+  padding: 1rem 0;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container {
+  width: 80%;
+  /* overflow: hidden; */
+  overflow-x: hidden;
+  position: relative;
+}
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.card {
+  flex: 0 0 300px;
+  height: 260px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 0 10px;
+  /* padding: 20px; */
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.card-img {
+  background-image: url(./images/happy-adventure.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  height: 60%;
+}
+
+.caption {
+  margin: 10px 0;
+  font-size: 17px;
+  font-family: "Rubik", sans-serif;
+  /* padding: 0.5rem 0; */
+}
+
+.description {
+  padding: 0 5px;
+  font-size: 16px;
+  margin: 10px 0;
+  font-family: "Rubik", sans-serif;
+  /* margin-bottom: 100px; */
+}
+
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+.img-two {
+  background-image: url(./images/sunset-cruise.jpg);
+}
+.img-three {
+  background-image: url(./images/acient-fam.jpg);
+}
+.img-four {
+  background-image: url(./images/solo-hiker.jpg);
+}
+.img-five {
+  background-image: url(./images/friend-trip.jpg);
+}
+
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.contact-form, .contact-details, .contact-map {
+  flex-basis: calc(33.333% - 20px);
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .contact-form, .contact-details, .contact-map {
+      flex-basis: 100%;
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input, textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+.google-map {
+  padding-bottom: 50%;
+  position: relative;
+}
+
+.google-map iframe {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
